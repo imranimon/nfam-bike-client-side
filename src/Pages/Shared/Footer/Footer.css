@@ -1,0 +1,19 @@
+.bg-footer{
+    background-color: #1D1F24;
+    color: white;
+}
+
+.footer-links a{
+    text-decoration: none;
+    color: white;
+}
+
+.footer-links a:hover {
+    color: rgb(182, 182, 182);
+    border-bottom: .5px solid white
+}
+ul{
+    list-style-type: none;
+    padding: 0;
+}
+
