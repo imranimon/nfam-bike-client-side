@@ -68,6 +68,7 @@ const Purchase = () => {
                     </Card>
                 </Col>
                 <Col>
+                    <h3 className="text-center">Shipping Address</h3>
                     <form onSubmit={handleSubmit(onPurchase)}>
                         <div className="mb-3">
                             <label htmlFor="name" className="form-label">Your Name</label>
@@ -100,7 +101,7 @@ const Purchase = () => {
                             {errors.zip && <span className='text-danger'>Post Code is required</span>}
                         </div>
                         <div className="mb-3">
-                            <input className='btn btn-outline-secondary' type="submit" value="Book Now" />
+                            <input className='btn btn-outline-secondary' type="submit" value="Place Order" />
                         </div>
                     </form>
                 </Col>
