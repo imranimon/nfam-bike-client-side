@@ -15,7 +15,7 @@ const useSwal = () => {
 
     const swalSuccess = (title) => {
         Swal.fire({
-            position: 'top-end',
+            position: 'center',
             icon: 'success',
             title,
             showConfirmButton: false,
@@ -23,15 +23,35 @@ const useSwal = () => {
         })
     }
 
-    const swalReturnSuccess = (title) => {
-        return Swal.fire({
-            position: 'top-end',
-            icon: 'success',
+    const swalWarning = (title) => {
+        Swal.fire({
+            position: 'center',
+            icon: 'warning',
             title,
             showConfirmButton: false,
             timer: 1500
         })
     }
+
+    const swalError = (title) => {
+        Swal.fire({
+            position: 'center',
+            icon: 'error',
+            title,
+            showConfirmButton: false,
+            timer: 1500
+        })
+    }
+    const swalReturnSuccess = (title, button) => {
+        return Swal.fire({
+            title,
+            icon: 'success',
+            showCancelButton: false,
+            confirmButtonColor: '#3085d6',
+            confirmButtonText: `${button}`
+        })
+    }
+
     const startLoading = (title) => {
         Swal.fire({
             title,
@@ -51,10 +71,12 @@ const useSwal = () => {
 
     return {
         swalConfirmation,
-        swalSuccess,
         swalReturnSuccess,
+        swalSuccess,
+        swalWarning,
+        swalError,
         startLoading,
-        stopLoading,
+        stopLoading
     }
 }
 

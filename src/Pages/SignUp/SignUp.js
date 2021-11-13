@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import { useHistory, useLocation } from 'react-router';
 import { useForm } from "react-hook-form";
+import Header from '../Shared/Header/Header';
+import Footer from '../Shared/Footer/Footer';
 
 const SignUp = () => {
     const prevLocation = useLocation();
@@ -48,7 +50,8 @@ const SignUp = () => {
                 setError(error.message);
             });
     }
-    return (
+    return (<>
+        <Header></Header>
         <div className='container mt-1'>
             <Row className='p-3 mb-5 bg-body rounded'>
                 <Col xs={12} md={6}>
@@ -93,8 +96,9 @@ const SignUp = () => {
                     </span>
                 </Col>
             </Row>
-
         </div>
+        <Footer></Footer>
+    </>
     );
 };
 

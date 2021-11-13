@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { Button, Container, Nav, Navbar} from 'react-bootstrap';
 import './Header.css'
 import { HashLink } from 'react-router-hash-link';
 import logo from '../../../images/header.png'

@@ -1,20 +1,28 @@
 import React from 'react';
 import { Card, Col } from 'react-bootstrap';
+import Rating from 'react-rating';
 
-const Review = () => {
+const Review = (props) => {
+    const { name, rating, opinion } = props.review
     return (
         <div>
             <Col>
-                <Card>
+                <Card style={{ height: '200px', overflow: 'auto' }}>
                     <Card.Body>
-                        <Card.Title>Card Title</Card.Title>
-                        <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
+                        <div className='sticky-top' style={{backgroundColor: 'white'}}>
+                            <Card.Title ><i className="far fa-user me-1"></i>{name}</Card.Title>
+                            <Rating
+                                className='text-warning'
+                                initialRating={rating}
+                                readonly
+                                emptySymbol="far fa-star"
+                                fullSymbol="fas fa-star"
+                            />
+                        </div>
+
                         <Card.Text>
-                            Some quick example text to build on the card title and make up the bulk of
-                            the card's content.
+                            {opinion}
                         </Card.Text>
-                        <Card.Link href="#">Card Link</Card.Link>
-                        <Card.Link href="#">Another Link</Card.Link>
                     </Card.Body>
                 </Card>
             </Col>
