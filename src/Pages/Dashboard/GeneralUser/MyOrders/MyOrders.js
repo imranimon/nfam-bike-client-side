@@ -11,7 +11,7 @@ const MyOrders = () => {
     const [orders, setOrders] = useState([]);
     const [deleteCount, setDeleteCount] = useState(0);
     useEffect(() => {
-        axios.get(`http://localhost:5000/orders/?email=${user.email}`)
+        axios.get(`https://shrouded-stream-54821.herokuapp.com/orders/?email=${user.email}`)
             .then(response => {
                 setOrders(response.data)
                 setDataLoading(false)
@@ -21,7 +21,7 @@ const MyOrders = () => {
         swalConfirmation("delete", "You won't be able to revert this!")
             .then((result) => {
                 if (result.isConfirmed) {
-                    axios.delete(`http://localhost:5000/orders/${_id}`)
+                    axios.delete(`https://shrouded-stream-54821.herokuapp.com/orders/${_id}`)
                         .then(response => {
                             setDeleteCount(deleteCount + 1)
                             swalSuccess('Order Deleted')

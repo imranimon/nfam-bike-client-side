@@ -14,7 +14,7 @@ const MakeAdmin = () => {
         swalConfirmation('Make Admin')
             .then(response => {
                 if (response.isConfirmed) {
-                    axios.put('http://localhost:5000/users/admin', data)
+                    axios.put('https://shrouded-stream-54821.herokuapp.com/users/admin', data)
                         .then((response) => {
                             if (response.data.modifiedCount) {
                                 swalSuccess(`${data.email} is now has Admin rights !!`)

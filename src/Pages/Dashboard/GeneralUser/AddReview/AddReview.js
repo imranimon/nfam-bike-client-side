@@ -16,7 +16,7 @@ const AddReview = () => {
 
     const onAddReview = (data) => {
         startLoading('Posting Review')
-        axios.post('http://localhost:5000/reviews', data)
+        axios.post('https://shrouded-stream-54821.herokuapp.com/reviews', data)
             .then(response => {
                 reset();
             }).finally(() => {

@@ -11,7 +11,7 @@ const ManageOrders = () => {
     const [modifiedCount, setModifiedCount] = useState(0);
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/orders`)
+        axios.get(`https://shrouded-stream-54821.herokuapp.com/orders`)
             .then(response => {
                 setOrders(response.data)
                 setDataLoading(false)
@@ -22,7 +22,7 @@ const ManageOrders = () => {
         swalConfirmation("delete", "You won't be able to revert this!")
             .then((result) => {
                 if (result.isConfirmed) {
-                    axios.delete(`http://localhost:5000/orders/${_id}`)
+                    axios.delete(`https://shrouded-stream-54821.herokuapp.com/orders/${_id}`)
                         .then(response => {
                             setDeleteCount(deleteCount + 1)
                             swalSuccess('Order Deleted')
@@ -38,7 +38,7 @@ const ManageOrders = () => {
                     const data = {
                         status: 'Shipped'
                     }
-                    axios.put(`http://localhost:5000/orders/${_id}`, data)
+                    axios.put(`https://shrouded-stream-54821.herokuapp.com/orders/${_id}`, data)
                         .then(response => {
                             setModifiedCount(modifiedCount + 1)
                             swalSuccess('Order Shipped')

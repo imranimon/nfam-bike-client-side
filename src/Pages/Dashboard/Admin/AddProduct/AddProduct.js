@@ -19,7 +19,7 @@ const AddProduct = () => {
         axios.post('https://api.cloudinary.com/v1_1/dwqqql7tm/image/upload', imgData)
             .then(response => {
                 serviceData.img = response.data.secure_url
-                axios.post('http://localhost:5000/products', serviceData)
+                axios.post('https://shrouded-stream-54821.herokuapp.com/products', serviceData)
                     .then(response => {
                         reset();
                         stopLoading()

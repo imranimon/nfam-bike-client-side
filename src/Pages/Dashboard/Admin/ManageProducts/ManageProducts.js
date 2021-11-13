@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import {Table } from 'react-bootstrap';
+import { Table } from 'react-bootstrap';
 import useSwal from '../../../../hooks/useSwal';
 
 const ManageProducts = () => {
@@ -20,7 +20,7 @@ const ManageProducts = () => {
         swalConfirmation("delete", "You won't be able to revert this!")
             .then((result) => {
                 if (result.isConfirmed) {
-                    axios.delete(`http://localhost:5000/products/${_id}`)
+                    axios.delete(`https://shrouded-stream-54821.herokuapp.com/products/${_id}`)
                         .then(response => {
                             setDeleteCount(deleteCount + 1)
                             swalSuccess('Product Deleted')

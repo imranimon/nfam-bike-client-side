@@ -10,7 +10,7 @@ const Reviews = () => {
     const [dataLoading, setDataLoading] = useState(true)
 
     useEffect(() => {
-        axios.get('http://localhost:5000/reviews')
+        axios.get('https://shrouded-stream-54821.herokuapp.com/reviews')
             .then(response => {
                 setReviews(response.data)
                 setDataLoading(false)
